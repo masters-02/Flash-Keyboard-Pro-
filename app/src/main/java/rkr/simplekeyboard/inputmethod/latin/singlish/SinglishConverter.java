@@ -21,7 +21,7 @@
  * ──────────────────────────────────────────────────────────────────────
  */
 
-package com.flashkeyboard.pro.inputmethod.latin.singlish;
+package rkr.simplekeyboard.inputmethod.latin.singlish;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

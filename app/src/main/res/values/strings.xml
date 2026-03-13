@@ -88,6 +88,7 @@
     <string name="keyboard_theme_light_border" translatable="false">Material Light Border</string>
     <string name="keyboard_theme_dark" translatable="false">Material Dark</string>
     <string name="keyboard_theme_light" translatable="false">Material Light</string>
+    <string name="keyboard_theme_neon_cyberpunk" translatable="false">Neon Cyberpunk ⚡</string>
     <string name="keyboard_theme_system" translatable="false">System Default</string>
     <string name="keyboard_theme_system_border" translatable="false">System Default Border</string>
 

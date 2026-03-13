@@ -37,6 +37,7 @@ import rkr.simplekeyboard.inputmethod.latin.settings.SettingsValues;
 import rkr.simplekeyboard.inputmethod.latin.utils.InputTypeUtils;
 import rkr.simplekeyboard.inputmethod.latin.utils.RecapitalizeStatus;
 import rkr.simplekeyboard.inputmethod.latin.utils.SubtypeLocaleUtils;
+import rkr.simplekeyboard.inputmethod.latin.singlish.SinglishInputProcessor;
 
 /**
  * This class manages the input logic.
@@ -48,6 +49,8 @@ public final class InputLogic {
     // This has package visibility so it can be accessed from InputLogicHandler.
     public final RichInputConnection mConnection;
     private final RecapitalizeStatus mRecapitalizeStatus = new RecapitalizeStatus();
+    // ⚡ Singlish phonetic Sinhala processor
+    private final SinglishInputProcessor mSinglish = new SinglishInputProcessor();
 
     /**
      * Create a new instance of the input logic.
@@ -288,8 +291,27 @@ public final class InputLogic {
      * Handle a non-separator.
      * @param event The event to handle.
      */
+    private boolean isSinglishSubtype() {
+        try {
+            rkr.simplekeyboard.inputmethod.latin.Subtype st =
+                rkr.simplekeyboard.inputmethod.latin.RichInputMethodManager
+                    .getInstance().getCurrentSubtype();
+            return st != null && "si".equals(st.getLocale().getLanguage());
+        } catch (Exception e) { return false; }
+    }
+
     private void handleNonSeparatorEvent(final Event event) {
-        sendKeyCodePoint(event.mCodePoint);
+        if (isSinglishSubtype()) {
+            final String commit = mSinglish.onChar((char) event.mCodePoint);
+            if (commit != null && !commit.isEmpty()) {
+                mConnection.commitText(commit, 1);
+            }
+            if (mSinglish.hasBuffer()) {
+                mConnection.setComposingText(mSinglish.getBuffer(), 1);
+            }
+        } else {
+            sendKeyCodePoint(event.mCodePoint);
+        }
     }
 
     /**
@@ -298,8 +320,13 @@ public final class InputLogic {
      * @param inputTransaction The transaction in progress.
      */
     private void handleSeparatorEvent(final Event event, final InputTransaction inputTransaction) {
-        sendKeyCodePoint(event.mCodePoint);
-
+        if (isSinglishSubtype() && mSinglish.hasBuffer()) {
+            final String text = mSinglish.onSeparator(event.mCodePoint);
+            mConnection.finishComposingText();
+            mConnection.commitText(text, 1);
+        } else {
+            sendKeyCodePoint(event.mCodePoint);
+        }
         inputTransaction.requireShiftUpdate(InputTransaction.SHIFT_UPDATE_NOW);
     }
 
@@ -321,6 +348,14 @@ public final class InputLogic {
                 ? InputTransaction.SHIFT_UPDATE_LATER : InputTransaction.SHIFT_UPDATE_NOW;
         inputTransaction.requireShiftUpdate(shiftUpdateKind);
 
+        if (isSinglishSubtype() && mSinglish.onBackspace()) {
+            if (mSinglish.hasBuffer()) {
+                mConnection.setComposingText(mSinglish.getBuffer(), 1);
+            } else {
+                mConnection.finishComposingText();
+            }
+            return;
+        }
         if (mConnection.hasSelection()) {
             mConnection.deleteSelectedText();
         } else {

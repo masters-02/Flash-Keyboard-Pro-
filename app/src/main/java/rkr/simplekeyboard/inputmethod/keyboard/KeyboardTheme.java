@@ -38,7 +38,8 @@ public final class KeyboardTheme {
     public static final int THEME_ID_DARK = 4;
     public static final int THEME_ID_SYSTEM = 5;
     public static final int THEME_ID_SYSTEM_BORDER = 6;
-    public static final int DEFAULT_THEME_ID = THEME_ID_SYSTEM;
+    public static final int THEME_ID_NEON_CYBERPUNK = 7;  // ⚡ Flash Keyboard Pro
+    public static final int DEFAULT_THEME_ID = THEME_ID_NEON_CYBERPUNK;
 
     /* package private for testing */
     static final KeyboardTheme[] KEYBOARD_THEMES = {
@@ -48,6 +49,7 @@ public final class KeyboardTheme {
         new KeyboardTheme(THEME_ID_DARK, "LXXDark", R.style.KeyboardTheme_LXX_Dark, true),
         new KeyboardTheme(THEME_ID_LIGHT_BORDER, "LXXLightBorder", R.style.KeyboardTheme_LXX_Light_Border, true),
         new KeyboardTheme(THEME_ID_DARK_BORDER, "LXXDarkBorder", R.style.KeyboardTheme_LXX_Dark_Border, true),
+        new KeyboardTheme(THEME_ID_NEON_CYBERPUNK, "NeonCyberpunk", R.style.KeyboardTheme_NeonCyberpunk, false),
     };
 
     public final int mThemeId;

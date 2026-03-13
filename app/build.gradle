@@ -1,23 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    // Java files වල තියෙන package එකට මේක සමාන විය යුතුයි
     namespace 'rkr.simplekeyboard.inputmethod'
-    
-    compileSdk 34 // දැනට ස්ථාවර මට්ටමේ තියෙන version එක (36 තවම අලුත් වැඩියි)
+    compileSdk 36
 
     defaultConfig {
-        // Play Store එකේ පේන ID එක (ඔයාට ඕන එකක් දෙන්න පුළුවන්)
         applicationId "com.flashkeyboard.pro"
         minSdkVersion 24
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
         debug {
-            applicationIdSuffix ""
             versionNameSuffix "-debug"
         }
         release {
@@ -25,10 +21,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 }
 
 dependencies {
-    // මෙතන අනිවාර්යයෙන්ම අවශ්‍ය libraries ටික තියෙන්න ඕනේ
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
 }

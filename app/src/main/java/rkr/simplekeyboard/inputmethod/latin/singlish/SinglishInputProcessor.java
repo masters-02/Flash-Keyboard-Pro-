@@ -25,7 +25,7 @@
  * ──────────────────────────────────────────────────────────────────────
  */
 
-package com.flashkeyboard.pro.inputmethod.latin.singlish;
+package rkr.simplekeyboard.inputmethod.latin.singlish;
 
 /**
  * Stateful composition buffer for Singlish (phonetic Sinhala) input.
