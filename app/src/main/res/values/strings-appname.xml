@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Flash Keyboard Pro branding strings -->
+    <string name="flash_keyboard_name" translatable="false">Flash Keyboard Pro</string>
+    <string name="flash_keyboard_settings" translatable="false">Flash Keyboard Pro Settings</string>
+
+    <!-- Keep legacy reference so any existing code using english_ime_name still compiles -->
+    <string name="english_ime_name" translatable="false">Flash Keyboard Pro</string>
+    <string name="english_ime_settings" translatable="false">Flash Keyboard Pro Settings</string>
+
+    <string name="privacy_policy_url" translatable="false">https://github.com/your-org/flash-keyboard-pro/blob/master/PRIVACY.md</string>
+    <string name="license_url" translatable="false">https://github.com/your-org/flash-keyboard-pro/blob/master/LICENSE</string>
+</resources>

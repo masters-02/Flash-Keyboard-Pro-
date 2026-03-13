@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    defaultConfig {
+        applicationId "com.flashkeyboard.pro"
+        compileSdk 36
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ""
+            versionNameSuffix "-debug"
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.flashkeyboard.pro'
+}
+
+dependencies {
+}

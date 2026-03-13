@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#0D0D0D</color>
+
+    <!-- ============================================================ -->
+    <!--  FLASH KEYBOARD PRO — NEON CYBERPUNK THEME                   -->
+    <!--  Primary accent : Neon Pink  #FF007F                         -->
+    <!--  Background     : Deep Black #0D0D0D                         -->
+    <!-- ============================================================ -->
+    <color name="neon_pink">#FF007F</color>
+    <color name="neon_pink_dim">#99FF007F</color>
+    <color name="neon_pink_pressed">#CCFF007F</color>
+    <color name="neon_black">#0D0D0D</color>
+    <color name="neon_black_secondary">#1A1A1A</color>
+    <color name="neon_key_text">#FFFFFFFF</color>
+    <color name="neon_key_text_hint">#AAFF007F</color>
+    <color name="neon_key_bg_normal">#1AFF007F</color>   <!-- very subtle pink tint -->
+    <color name="neon_key_bg_pressed">#4DFF007F</color>  <!-- stronger pink on press -->
+    <color name="neon_spacebar_bg">#26FF007F</color>
+
+    <!-- ============================================================ -->
+    <!--  Original LXX_System theme colors (kept for compatibility)   -->
+    <!-- ============================================================ -->
+    <color name="background_lxx_system">#fffafafa</color>
+    <color name="background_secondary_lxx_system">#fff5f5f5</color>
+    <color name="key_text_color_lxx_system">#de000000</color>
+    <color name="key_functional_text_color_lxx_system">#70000000</color>
+    <color name="key_text_inactive_color_lxx_system">#de000000</color>
+    <color name="key_hint_letter_color_lxx_system">#90000000</color>
+    <color name="key_background_normal_lxx_system">#ffd6d7d7</color>
+    <color name="key_background_pressed_lxx_system">#20000000</color>
+
+    <!-- LXX_Light theme colors -->
+    <color name="background_lxx_light">#ECEFF1</color>
+    <color name="background_secondary_lxx_light">#20000000</color>
+    <color name="key_text_color_lxx_light">#37474F</color>
+    <color name="key_functional_text_color_lxx_light">#CC37474F</color>
+    <color name="key_text_inactive_color_lxx_light">#B337474F</color>
+    <color name="key_hint_letter_color_lxx_light">#B337474F</color>
+    <color name="key_background_normal_lxx_light">#26080B0C</color>
+    <color name="key_background_pressed_lxx_light">#400E1214</color>
+
+    <!-- LXX_Dark theme colors -->
+    <color name="background_lxx_dark">#263238</color>
+    <color name="background_secondary_lxx_dark">#20FFFFFF</color>
+    <color name="key_text_color_lxx_dark">#CCFFFFFF</color>
+    <color name="key_functional_text_color_lxx_dark">#CCFFFFFF</color>
+    <color name="key_text_inactive_color_lxx_dark">#80FFFFFF</color>
+    <color name="key_hint_letter_color_lxx_dark">#80FFFFFF</color>
+    <color name="key_background_normal_lxx_dark">#2AAAAAAA</color>
+    <color name="key_background_pressed_lxx_dark">#4AAAAAAA</color>
+
+    <!-- Shared dimensions -->
+    <dimen name="button_corner_radius_lxx">6dp</dimen>
+    <!-- Neon theme uses a slightly larger radius for the "pill" look -->
+    <dimen name="button_corner_radius_neon">8dp</dimen>
+    <dimen name="neon_border_width">1dp</dimen>
+</resources>

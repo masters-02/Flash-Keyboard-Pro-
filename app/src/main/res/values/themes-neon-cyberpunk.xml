@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  themes-neon-cyberpunk.xml
+  ──────────────────────────────────────────────────────────────────────
+  Flash Keyboard Pro — Neon Cyberpunk Theme
+  Background : Deep Black  (#0D0D0D)
+  Accent     : Neon Pink   (#FF007F)
+  Keys have a glowing pink border effect achieved via layered drawables.
+  ──────────────────────────────────────────────────────────────────────
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ── Top-level theme entry ─────────────────────────────────── -->
+    <style name="KeyboardTheme.NeonCyberpunk">
+        <item name="inputViewStyle">@style/InputView</item>
+        <item name="keyboardStyle">@style/Keyboard.NeonCyberpunk</item>
+        <item name="keyboardViewStyle">@style/KeyboardView.NeonCyberpunk</item>
+        <item name="mainKeyboardViewStyle">@style/MainKeyboardView.NeonCyberpunk</item>
+        <item name="moreKeysKeyboardStyle">@style/MoreKeysKeyboard.NeonCyberpunk</item>
+        <item name="moreKeysKeyboardViewStyle">@style/MoreKeysKeyboardView.NeonCyberpunk</item>
+        <item name="functionalTextColor">@color/neon_pink</item>
+        <item name="popupPanelBackgroundColor">@color/neon_black_secondary</item>
+        <item name="keyPressedBackgroundColor">@color/neon_key_bg_pressed</item>
+        <item name="keyNormalBackgroundColor">@color/neon_key_bg_normal</item>
+    </style>
+
+    <!-- ── Keyboard layout style ─────────────────────────────────── -->
+    <style name="Keyboard.NeonCyberpunk" parent="Keyboard">
+        <!-- Slightly wider horizontal gaps so the border/glow is visible -->
+        <item name="horizontalGap">2%p</item>
+        <item name="verticalGap">2%p</item>
+    </style>
+
+    <!-- ── KeyboardView (handles drawing each key) ───────────────── -->
+    <style name="KeyboardView.NeonCyberpunk" parent="KeyboardView">
+        <!-- Deep-black background for the whole keyboard strip -->
+        <item name="android:background">@color/neon_black</item>
+
+        <!-- Neon drawables for keys -->
+        <item name="keyBackground">@drawable/btn_keyboard_key_neon</item>
+        <item name="functionalKeyBackground">@drawable/btn_keyboard_key_neon</item>
+        <item name="spacebarBackground">@drawable/btn_keyboard_spacebar_neon</item>
+
+        <!-- Text colours -->
+        <item name="keyTextColor">@color/neon_key_text</item>
+        <item name="keyTextInactivatedColor">@color/neon_pink_dim</item>
+        <item name="keyHintLetterColor">@color/neon_pink_dim</item>
+        <item name="keyHintLabelColor">@color/neon_key_text_hint</item>
+        <item name="keyShiftedLetterHintInactivatedColor">@color/neon_pink_dim</item>
+        <item name="keyShiftedLetterHintActivatedColor">@color/neon_pink</item>
+        <item name="keyPreviewTextColor">@color/neon_pink</item>
+    </style>
+
+    <!-- ── MainKeyboardView (extends KeyboardView, adds preview) ─── -->
+    <style name="MainKeyboardView.NeonCyberpunk" parent="KeyboardView.NeonCyberpunk">
+        <item name="keyPreviewBackground">@drawable/keyboard_key_feedback_background</item>
+        <item name="keyPreviewHeight">@dimen/config_key_preview_height_lxx</item>
+        <item name="keyPreviewWidth">@dimen/config_key_preview_width_lxx</item>
+        <item name="keyPreviewOffset">@dimen/config_key_preview_offset_lxx</item>
+        <item name="keyPreviewDismissAnimator">@anim/key_preview_dismiss_lxx</item>
+        <item name="languageOnSpacebarTextColor">@color/neon_pink_dim</item>
+    </style>
+
+    <!-- ── MoreKeys popup keyboard ───────────────────────────────── -->
+    <style name="MoreKeysKeyboard.NeonCyberpunk" parent="Keyboard.NeonCyberpunk">
+        <item name="keyboardTopPadding">0%p</item>
+        <item name="keyboardBottomPadding">0%p</item>
+        <item name="horizontalGap">0%p</item>
+    </style>
+
+    <style name="MoreKeysKeyboardView.NeonCyberpunk" parent="KeyboardView.NeonCyberpunk">
+        <item name="android:background">@drawable/keyboard_popup_panel_background</item>
+        <item name="keyBackground">@drawable/btn_keyboard_key_popup</item>
+        <item name="keyTypeface">normal</item>
+        <item name="verticalCorrection">@dimen/config_more_keys_keyboard_vertical_correction</item>
+    </style>
+
+</resources>
